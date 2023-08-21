@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 class NewAuthorController(private val authorRepository: AuthorRepository) {
 
     @PostMapping("/author")
-    fun registerAuthor(@Valid @RequestBody request: NewAuthorRequest): ResponseEntity<NewAuthorResponse> {
+    fun registerAuthor(@RequestBody @Valid request: NewAuthorRequest): ResponseEntity<NewAuthorResponse> {
         val model = authorRepository.save(request.toModel())
         return ResponseEntity.ok().body(NewAuthorResponse(model))
     }

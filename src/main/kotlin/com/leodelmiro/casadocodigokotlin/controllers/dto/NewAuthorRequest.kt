@@ -6,9 +6,9 @@ import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.Size
 
 data class NewAuthorRequest(
-    @NotBlank val name: String,
-    @NotBlank @Email val email: String,
-    @NotBlank @Size(max = 400) val description: String
+    @field:NotBlank val name: String,
+    @field:NotBlank @field:Email val email: String,
+    @field:NotBlank @field:Size(max = 400) val description: String
 ) {
     fun toModel(): Author = Author(name = this.name, email = this.email, description = this.description)
 }

@@ -13,9 +13,12 @@ import java.time.LocalDateTime
 
 @Entity(name = "tb_author")
 class Author(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = null,
-    @NotBlank @NotNull val name: String,
-    @NotBlank @NotNull @Email val email: String,
-    @NotBlank @NotNull @Size(max = 400) val description: String,
-    @NotNull @CreatedDate val createdAt: LocalDateTime = LocalDateTime.now()
-)
+    @field:NotBlank @field:NotNull val name: String,
+    @field:NotBlank @field:NotNull @field:Email val email: String,
+    @field:NotBlank @field:NotNull @field:Size(max = 400) val description: String,
+    @field:NotNull @field:CreatedDate val createdAt: LocalDateTime = LocalDateTime.now()
+) {
+    @field:Id
+    @field:GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long? = null
+}
