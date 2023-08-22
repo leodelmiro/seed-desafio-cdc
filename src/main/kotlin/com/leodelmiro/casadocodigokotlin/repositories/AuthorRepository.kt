@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface AuthorRepository : CrudRepository<Author, Long> {
+    fun findByEmail(email: String?): Author?
 }

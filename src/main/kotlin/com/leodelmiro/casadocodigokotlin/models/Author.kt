@@ -1,9 +1,6 @@
 package com.leodelmiro.casadocodigokotlin.models
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
@@ -14,7 +11,7 @@ import java.time.LocalDateTime
 @Entity(name = "tb_author")
 class Author(
     @field:NotBlank @field:NotNull val name: String,
-    @field:NotBlank @field:NotNull @field:Email val email: String,
+    @field:NotBlank @field:NotNull @field:Email @Column(unique = true) val email: String,
     @field:NotBlank @field:NotNull @field:Size(max = 400) val description: String,
     @field:NotNull @field:CreatedDate val createdAt: LocalDateTime = LocalDateTime.now()
 ) {

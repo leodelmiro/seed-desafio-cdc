@@ -18,3 +18,10 @@ restrições
 
 Resultado esperado:
   - Um novo autor criado e status 200 retornado
+
+### Segundo Card: 
+
+- O email do autor precisa ser único no sistema
+
+Resultado esperado:
+  - Erro de validação no caso de email duplicado
